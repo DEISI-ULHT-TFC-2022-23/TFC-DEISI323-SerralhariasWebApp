@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Serralharia Web App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="../../static/css/style.css" />
+</head>
+   
+<body>
+    <div class="header">
+        <div class="header_actions_blank"></div>
+        <!--blank canvas to center title element. Could be used for burger menu in the future-->
+        <span class="title">Serralharia Web Apps</span>
+        <div class="header_actions">
+            <span id="search"></span>
+            <span id="avatar"></span>
+        </div>
+    </div><!--End Header-->
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

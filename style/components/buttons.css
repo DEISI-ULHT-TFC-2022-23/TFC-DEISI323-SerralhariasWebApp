@@ -1,0 +1,57 @@
+/*colors*/
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+.button_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.primary_button {
+  width: 274px;
+  background-color: #333333;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.secondary_button {
+  width: 274px;
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  line-height: 24px;
+}/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,653 @@
+/*colors*/
+/*colors*/
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+.header {
+  width: 100vw;
+  height: 80px;
+  position: relative;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 8px rgba(79, 79, 79, 0.2);
+          box-shadow: 0px 2px 8px rgba(79, 79, 79, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px 80px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.header .burguer {
+  width: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 16px;
+}
+.header .burguer .burguer_icon {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/burguer.svg);
+  cursor: pointer;
+}
+.header .title {
+  color: #333333;
+  font-family: "Inter-Medium";
+  font-size: 24px;
+  line-height: 32px;
+}
+.header .header_actions {
+  width: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 16px;
+}
+.header .header_actions #search {
+  width: 32px;
+  height: 32px;
+  background-image: url(../assets/icons/search.svg);
+  cursor: pointer;
+}
+.header .header_actions #avatar {
+  width: 32px;
+  height: 32px;
+  background-image: url(../assets/icons/avatar.svg);
+  cursor: pointer;
+}
+
+/*colors*/
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+.product_card {
+  width: 348px;
+  position: relative;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.product_card #image {
+  width: 324px;
+  height: 230px;
+  background-image: url(../assets/imgs/highlight_default.png);
+}
+.product_card .info {
+  width: 100%;
+  max-width: 324px;
+  position: relative;
+  padding: 0px 12px 0px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.product_card .info .text_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.product_card .info .text_container .text_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+.product_card .info .text_container .text_block .product_name {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.product_card .info .text_container .text_block .item_type {
+  color: #828282;
+  font-family: "Inter-regular";
+  font-size: 14px;
+  line-height: 22px;
+}
+.product_card .info .text_container .item_price {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 20px;
+  line-height: 28px;
+}
+.product_card .info .favorite {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/Heart_Empty.svg);
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+/*colors*/
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+.button_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+
+.primary_button {
+  width: 274px;
+  background-color: #333333;
+  border-radius: 8px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #FFFFFF;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.secondary_button {
+  width: 274px;
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #333333;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F2F2F2;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  padding: 24px 80px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 120px;
+}
+.container .content {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.container .content .back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  gap: 4px;
+}
+.container .content .back .back_icon {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/back.svg);
+  cursor: pointer;
+}
+.container .content .back .back_text {
+  color: #828282;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.container .content .product_container {
+  width: 100%;
+  height: 55vh;
+  min-height: 525px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 24px;
+}
+.container .content .product_container .images_container {
+  width: 9%;
+  min-width: 124px;
+  height: 100%;
+  overflow-x: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+.container .content .product_container .images_container .small-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 124px;
+  min-height: 124px;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/imgs/small_image_default_2.svg);
+}
+.container .content .product_container .image_display {
+  width: 41%;
+  min-width: 719px;
+  height: 100%;
+  min-height: 525px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/imgs/small_image_default_2.svg);
+}
+.container .content .product_container .product_info {
+  width: 50%;
+  height: 100%;
+  min-height: 525px;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .content .product_container .product_info .product_details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .content .product_container .product_info .product_details .product_header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 24px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.container .content .product_container .product_info .product_details .product_header .text_block {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+.container .content .product_container .product_info .product_details .product_header .text_block .text {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 20px;
+  line-height: 28px;
+}
+.container .content .product_container .product_info .product_details .product_header .heart_icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/Heart_Empty.svg);
+  cursor: pointer;
+}
+.container .content .product_container .product_info .product_details .product_description {
+  color: #4F4F4F;
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 24px;
+}
+.container .content .product_container .product_info .bottom_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 48px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .title {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 24px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .details .shipment_header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .details .shipment_header .shipment_icon {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/home.svg);
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .details .shipment_header .delivery_icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/delivery.svg);
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .details .shipment_header .text {
+  width: 100%;
+  color: #333333;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .details .details {
+  color: #4F4F4F;
+  font-family: "Inter-Regular";
+  font-size: 14px;
+  line-height: 22px;
+}
+.container .content .product_container .product_info .bottom_details .shipment_details .shipment_content .devider {
+  width: 2px;
+  height: 100%;
+  background-color: #E0E0E0;
+}
+.container .related_products {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 16px;
+}
+.container .related_products .related_title {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 20px;
+  line-height: 28px;
+}
+.container .related_products .related_row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}

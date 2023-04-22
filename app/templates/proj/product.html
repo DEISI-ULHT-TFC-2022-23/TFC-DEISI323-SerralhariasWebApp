@@ -1,0 +1,118 @@
+{% extends 'proj/base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/../static/css/style_product.css" />
+</head>
+
+<div class="container">
+    <div class="content">
+        <!--Back Component-->
+        <div class="back">
+            <span class="back_icon"></span>
+            <span class="back_text">Back</span>
+        </div><!--/Back Component-->
+
+        <!--Product Container-->
+        <div class="product_container">
+            <!--Small Image List-->
+            <div class="images_container">
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+                <span class="small-image"></span>
+            </div><!--/Small Image List-->
+
+            <!--Image on Display-->
+            <div class="image_display"></div><!--/Image on Display-->
+
+            <!--Product Info-->
+            <div class="product_info">
+                <div class="product_details">
+                    <div class="product_header">
+                        <div class="text_block">
+                            <span class="text">{{product.name}}</span>
+                            <span class="text">{{ product.price}}</span>
+                        </div>
+                        <span class="heart_icon"></span>
+                    </div><!--/product_header-->
+
+                    <!--product description-->
+                    <span class="product_description">{{ product.description}}</span>
+                </div><!--product details-->
+                <div class="bottom_details">
+                    <!--shipment details-->
+                    <div class="shipment_details">
+                        <span class="title">How to get it</span>
+                        <div class="shipment_content">
+                            <div class="details">
+                                <div class="shipment_header">
+                                    <span class="shipment_icon"></span>
+                                    <span class="text">Pick it up from out workshop</span>
+                                </div>
+                                <span class="details">If you prefer, you are always welcome to visit us and collect you
+                                    order!</span>
+                            </div><!--End Pick Up Details-->
+                            <div class="devider"></div><!--End devider-->
+                            <div class="details">
+                                <div class="shipment_header">
+                                    <span class="delivery_icon"></span>
+                                    <span class="text">Delivery</span>
+                                </div>
+                                <span class="details">If it's more convinient to you we send the producct directly to
+                                    your home!</span>
+                            </div><!--End Delivery Details-->
+                        </div>
+                    </div><!--shipment details-->
+                    <!--button details-->
+                    <div class="button_container">
+                        <div class="primary_button">Place Order</div>
+                        <div class="secondary_button">Custom Order</div>
+                    </div>
+                </div>
+            </div><!--/product Info-->
+        </div><!--/Product Container-->
+    </div> <!--End Content-->
+    <div class="related_products">
+        <span class="related_title">Related Products</span>
+        <div class="related_row">
+            {% for relatedProduct in relatedProducts %}
+                <a style="text-decoration:none" href="{% url 'product' relatedProduct.id %}" class="product_card">
+                    <span id="image"></span>
+                    <div class="info">
+                        <div class="text_container">
+                            <div class="text_block">
+                                <span class="product_name">{{ relatedProduct.name }}</span>
+                                <span class="item_type">{{ relatedProduct.type }}</span>
+                            </div>
+                            <span class="item_price">{{ relatedProduct.price }}</span>
+                        </div>
+                        <span class="favorite"></span>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

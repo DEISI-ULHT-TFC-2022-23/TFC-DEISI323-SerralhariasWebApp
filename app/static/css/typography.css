@@ -1,0 +1,18 @@
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}

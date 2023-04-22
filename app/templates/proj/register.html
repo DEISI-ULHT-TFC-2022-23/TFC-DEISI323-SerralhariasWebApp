@@ -1,0 +1,11 @@
+{% extends 'proj/base.html' %}
+
+{% block content %}
+<div class="register">
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="register" class="btn btn-primary">
+  </form>
+</div>
+{% endblock %}

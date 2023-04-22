@@ -1,0 +1,51 @@
+{% extends 'proj/base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/../static/css/homepage.css" /> 
+
+<div class="container">
+    <!--Welcome Text-->
+    <div class="welcome_text">
+        <span class="title">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </span>
+        <span class="sub-title">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+        </span>
+    </div>
+    <div class="content">
+
+       
+        <!--Highlights-->
+        <div class="hightlight">
+            <span class="hightlight_text">{{category}}</span>
+            <div class="highlights_container">
+
+                <!-- Loop over the list of products -->
+                {% for product in products %}
+                <!--Product Card Mock-->
+                <a style="text-decoration:none" href="{% url 'product' product.id %}"class ="product_card">
+                    <!-- Render the product image -->
+                    <span id="image"><img src="{{ product.image.url }}"></span>
+                    <div class="info">
+                        <div class="text_container">
+                            <div class="text_block">
+                                <!-- Render the product name and type -->
+                                <span class="product_name">{{ product.name }}</span>
+                                <span class="item_type">{{ product.type }}</span>
+                            </div>
+                            <!-- Render the product price -->
+                            <span class="item_price">{{ product.price }}€</span>
+                        </div>
+                        <span class="favorite"></span>
+                    </div>
+                </a><!--End Product Card-->
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+1. descomprimir o ficheiro descaregado para uma pasta de trabalho
+2. abrir uma janela de linha de comandos e navegar pasta de trabalho
+3. executar o comando 
+   docker build -t «serra» .
+   - o comando tem que ser executado na pasta onde está o ficheiro 'dockerfile'
+4. quando o comando acabar, executar
+   docker run --name «myTfc» -p 3306:3306 -d «serra»
+5. No docker desktop fica disponivel um ambiente com MariaDB/MySQL que pode ser parado/iniciado

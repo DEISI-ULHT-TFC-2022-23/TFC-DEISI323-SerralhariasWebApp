@@ -1,0 +1,180 @@
+/*colors*/
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@import url(../assets/fonts/Inter-Bold.ttf);
+@import url(../assets/fonts/Inter-Medium.ttf);
+@import url(../assets/fonts/Inter-Regular.ttf);
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+/*colors*/
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter-Medium";
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+}
+.product_card {
+  width: 348px;
+  position: relative;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.product_card #image {
+  width: 324px;
+  height: 230px;
+  background-image: url(../assets/imgs/highlight_default.png);
+}
+.product_card .info {
+  width: 100%;
+  max-width: 324px;
+  position: relative;
+  padding: 0px 12px 0px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.product_card .info .text_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product_card .info .text_container .text_block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.product_card .info .text_container .text_block .product_name {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.product_card .info .text_container .text_block .item_type {
+  color: #828282;
+  font-family: "Inter-regular";
+  font-size: 14px;
+  line-height: 22px;
+}
+.product_card .info .text_container .item_price {
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 20px;
+  line-height: 28px;
+}
+.product_card .info .favorite {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/Heart_Empty.svg);
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 160px;
+}
+.container .welcome_text {
+  width: 45%;
+  max-width: 868px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.container .welcome_text .title {
+  text-align: center;
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 40px;
+  line-height: 48px;
+}
+.container .welcome_text .sub-title {
+  text-align: center;
+  color: #333333;
+  font-family: "Inter-Medium";
+  font-size: 24px;
+  line-height: 32px;
+}
+.container .content {
+  width: 76%;
+  max-width: 1462px;
+  display: flex;
+  flex-direction: column;
+  gap: 137px;
+  align-items: center;
+}
+.container .content .categories {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+  justify-content: space-between;
+}
+.container .content .categories .category {
+  width: 274px;
+  height: 200px;
+  background-image: url(../assets/imgs/category_default.png);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.container .content .hightlight {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 80px;
+  position: relative;
+}
+.container .content .hightlight .hightlight_text {
+  text-align: center;
+  color: #333333;
+  font-family: "Inter-Bold";
+  font-size: 24px;
+  line-height: 32px;
+}
+.container .content .hightlight .highlights_container {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=homepage.css.map */

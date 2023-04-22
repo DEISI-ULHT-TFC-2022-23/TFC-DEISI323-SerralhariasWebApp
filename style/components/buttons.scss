@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import 'variables.scss';
+@import 'typography.scss';
+
+.button_container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+}
+
+.primary_button{
+   width:274px;
+   background-color: $gray-1;
+   border-radius: 8px;
+   padding:12px; 
+   box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   //text style
+    color:$white;
+    font-family: "Inter-Medium";
+    font-size: $medium-text;
+    line-height: $LH-medium-text;
+}
+
+.secondary_button{
+    width:274px;
+    background-color: $white;
+    border: 1px solid $gray-1;
+    border-radius: 8px;
+    padding:12px; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    //text style
+     color:$gray-1;
+     font-family: "Inter-Medium";
+     font-size: $medium-text;
+     line-height: $LH-medium-text;
+ }

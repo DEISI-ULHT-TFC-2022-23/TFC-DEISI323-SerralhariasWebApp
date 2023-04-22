@@ -1,0 +1,274 @@
+@charset "utf-8";
+@import 'components/variables.scss';
+@import 'components/header.scss';
+@import 'components/product_card.scss';
+@import 'components/typography.scss';
+@import 'components/buttons.scss';
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+}
+
+.container{
+    width:100%;
+    position: relative;
+    padding: 24px 80px;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:120px;
+
+    .content{
+        width:100%;
+        box-sizing: border-box;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:24px;
+        justify-content: flex-start;
+
+        .back{
+            display:flex;
+            flex-direction: row;
+            align-self: flex-start;
+            gap:4px;
+
+            .back_icon{
+                width:24px;
+                height:24px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url(../assets/icons/back.svg);
+                cursor: pointer;
+            }
+
+            .back_text{
+                color:$gray-3;
+                font-family: "Inter-Medium";
+                font-size:$medium-text;
+                line-height: $LH-medium-text;
+            }
+        }
+
+        .product_container{
+            width: 100%;;
+            height:55vh;
+            min-height:525px;
+            display:flex;
+            flex-direction: row;
+            gap: 24px;
+
+            .images_container{
+                width:9%;
+                min-width:124px;
+                height:100%;
+                overflow-x: scroll;
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                gap:12px;
+
+                .small-image{
+                    display: block;
+                    width:100%;
+                    height:auto;
+                    min-width: 124px;
+                    min-height: 124px;
+                    border-radius: 8px;
+                    background-repeat: no-repeat; 
+                    background-size:cover;
+                    background-image: url(../assets/imgs/small_image_default_2.svg);
+                }
+            }
+
+            .image_display{
+                width:41%;
+                min-width:719px;
+                height:100%;
+                min-height:525px;
+                background-repeat: no-repeat; 
+                background-size:cover;
+                background-image: url(../assets/imgs/small_image_default_2.svg);
+            }
+
+            .product_info{
+                width:50%;
+                height:100%;
+                min-height:525px;
+                padding: 16px;
+                box-sizing: border-box;
+                background-color: $white;
+                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .product_details{
+                    width:100%;
+                    display:flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    justify-content:space-between;
+
+                    .product_header{
+                        width:100%;
+                        display:flex;
+                        flex-direction: row;
+                        gap: 24px;
+                        justify-content: space-between;
+                        align-items: flex-start;                        
+
+                        .text_block{
+                            width:200px;
+                            display:flex;
+                            flex-direction: column;
+                            gap:16px;   
+    
+                            .text{
+                                color:$gray-1;
+                                font-family: "Inter-Bold";
+                                font-size: $medium-large-text;
+                                line-height: $LH-medium-large-text;
+                            }
+    
+                        }
+    
+                        .heart_icon{
+                            width:32px;
+                            height:32px;
+                            display: block;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-image: url(../assets/icons/Heart_Empty.svg);
+                            cursor: pointer;
+                        }
+                    }
+
+                    .product_description{
+                        color:$gray-2;
+                        font-family: "Inter-Regular";
+                        font-size: $medium-text;
+                        line-height: $LH-medium-text;
+                    }
+                }//End Product Details
+
+                .bottom_details{
+                    display: flex;
+                    flex-direction: column;
+                    gap:48px;
+                    align-self: flex-end;
+
+                    .shipment_details{
+                        width:100%;
+                        display:flex;
+                        flex-direction: column;
+                        gap:24px;
+    
+                        .title{
+                            color:$gray-1;
+                            font-family: "Inter-Bold";
+                            font-size: $medium-text;
+                            line-height: $LH-medium-text;
+                        }
+    
+                        .shipment_content{
+                            width:100%;
+                            display: flex;
+                            flex-direction: row;
+                            gap:24px;
+    
+                            .details{
+                                width:100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap:8px;
+    
+                                .shipment_header{
+                                    width:100%;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap:8px;
+    
+                                    .shipment_icon{
+                                        width:24px;
+                                        height:24px;
+                                        background-repeat: no-repeat;
+                                        background-size: contain;
+                                        background-image: url(../assets/icons/home.svg);
+                                    }
+    
+                                    .delivery_icon{
+                                        width:24px;
+                                        height:24px;
+                                        display: block;
+                                        background-repeat: no-repeat;
+                                        background-size: contain;
+                                        background-image: url(../assets/icons/delivery.svg);
+                                    }
+    
+                                    .text{
+                                        width:100%;
+                                        color:$gray-1; 
+                                        font-family: "Inter-Medium";
+                                        font-size: $medium-text;
+                                        line-height: $LH-medium-text;
+                                    }
+                                }//end shipment header
+    
+                                .details{
+                                    color:$gray-2;
+                                    font-family: "Inter-Regular";
+                                    font-size: $regular-text;
+                                    line-height: $LH-regular-text;
+                                }
+                            }
+    
+                            .devider{
+                                width:2px;
+                                height:100%;
+                                background-color:$gray-5;
+                            }
+    
+                        }//shipment_content
+                    }//shipment details
+                }//bottom details
+            
+            }//product info
+        }//product_container
+    }//content
+
+    .related_products{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:16px;
+
+        .related_title{
+            color:$gray-1;
+            font-family: "Inter-Bold";
+            font-size: $medium-large-text;
+            line-height: $LH-medium-large-text;
+        }
+
+        .related_row{
+            width: 100%;
+            display: grid;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap:16px;
+            padding-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+    }//related products
+
+}//container
