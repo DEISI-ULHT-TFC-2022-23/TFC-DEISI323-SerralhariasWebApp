@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Serralharia Web App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type='text/css' href="../../static/css/style.css" />
+    <link rel="stylesheet" type='text/css' href="/../static/css/style.css" />
 </head>
    
 <body>
@@ -17,6 +17,7 @@
         <div class="header_actions">
             <a style="text-decoration:none" href="{% url 'register' %}" class="registerBtn">Register</a>
             <a style="text-decoration:none" href="{% url 'login' %}" class="loginBtn">Login</a>
+            <a style="text-decoration:none" href="{% url 'addProduct' %}" class="addProduct">Add a Product</a>
             <span id="search"></span>
             <span id="avatar"></span> 
         </div>

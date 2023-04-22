@@ -1,7 +1,7 @@
 {% extends 'proj/base.html' %}
 
 {% block content %}
-<link rel="stylesheet" type='text/css' href="../../static/css/homepage.css" />
+
 </head>
 
 <!--Content-->
@@ -23,6 +23,7 @@
         <div class="categories">
             {% for category in categories %}
             <a style="text-decoration:none" href="{% url 'category' category %}"class="category">{{ category }}</a>
+            <div class="category-image" style="background-image: url('../assets/imgs/category_default.png')"></div>
             {% endfor %}
         </div>
         <!--Highlights-->

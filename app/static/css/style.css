@@ -93,7 +93,7 @@
 }
 
 .header .header_actions .registerBtn{
-  width: 100px;
+  width: 150px;
   height: 32px;
   line-height: 32px;
   font-family: "Inter-Medium";
@@ -101,7 +101,15 @@
   text-align: left;
 }
 .header .header_actions .loginBtn{
-  width: 100px;
+  width: 150px;
+  height: 32px;
+  line-height: 32px;
+  font-family: "Inter-Medium";
+  color: #333333;
+  text-align: left;
+}
+.header .header_actions .addProduct{
+  width: 150px;
   height: 32px;
   line-height: 32px;
   font-family: "Inter-Medium";
@@ -294,7 +302,7 @@
   line-height: 32px;
 }
 .container .content {
-  width: 76%;
+  width: 100%;
   max-width: 1462px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -325,6 +333,11 @@
 .container .content .categories .category {
   width: 274px;
   height: 200px;
+  font-family: "Inter-Medium";
+  font-size: xx-large;
+  text-align: center;
+  color: black;
+  line-height: 200px;
   background-image: url(../assets/imgs/category_default.png);
   -webkit-box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
