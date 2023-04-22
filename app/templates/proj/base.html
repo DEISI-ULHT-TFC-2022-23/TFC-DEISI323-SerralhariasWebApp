@@ -15,8 +15,10 @@
         <!--blank canvas to center title element. Could be used for burger menu in the future-->
         <span class="title">Serralharia Web Apps</span>
         <div class="header_actions">
+            <a style="text-decoration:none" href="{% url 'register' %}" class="registerBtn">Register</a>
+            <a style="text-decoration:none" href="{% url 'login' %}" class="loginBtn">Login</a>
             <span id="search"></span>
-            <span id="avatar"></span>
+            <span id="avatar"></span> 
         </div>
     </div><!--End Header-->
     {% block content %}

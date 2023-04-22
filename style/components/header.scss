@@ -38,6 +38,7 @@
         font-family: "Inter-Medium";
         font-size: $large-text;
         line-height: $LH-large-text;
+        text-align: right;
     }
 
     .header_actions{
@@ -46,6 +47,13 @@
         flex-direction: row;
         align-items: flex-start;
         gap:16px;
+
+        #register{
+            width:32px;
+            height:32px;
+            line-height: 32px;
+            font-family: "Inter-Medium";
+        }
 
         #search{
             width:32px;

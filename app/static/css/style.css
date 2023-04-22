@@ -29,6 +29,7 @@
   height: 80px;
   position: relative;
   background-color: #FFFFFF;
+  text-align: justify;
   -webkit-box-shadow: 0px 2px 8px rgba(79, 79, 79, 0.2);
           box-shadow: 0px 2px 8px rgba(79, 79, 79, 0.2);
   display: -webkit-box;
@@ -70,37 +71,56 @@
   background-image: url(../assets/icons/burguer.svg);
   cursor: pointer;
 }
+.header .header_actions_blank{
+  width: 33.3%;
+}
+
 .header .title {
+  width: 33.3%;
   color: #333333;
   font-family: "Inter-Medium";
   font-size: 24px;
   line-height: 32px;
+  text-align: center;
+  
 }
 .header .header_actions {
-  width: 88px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 33.3%;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   gap: 16px;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.header .header_actions .registerBtn{
+  width: 100px;
+  height: 32px;
+  line-height: 32px;
+  font-family: "Inter-Medium";
+  color: #333333;
+  text-align: left;
+}
+.header .header_actions .loginBtn{
+  width: 100px;
+  height: 32px;
+  line-height: 32px;
+  font-family: "Inter-Medium";
+  color: #333333;
+  text-align: left;
 }
 .header .header_actions #search {
   width: 32px;
   height: 32px;
   background-image: url(../assets/icons/search.svg);
   cursor: pointer;
+  text-align: right;
 }
 .header .header_actions #avatar {
   width: 32px;
   height: 32px;
   background-image: url(../assets/icons/avatar.svg);
   cursor: pointer;
+  text-align: right;
 }
 
 /*colors*/
