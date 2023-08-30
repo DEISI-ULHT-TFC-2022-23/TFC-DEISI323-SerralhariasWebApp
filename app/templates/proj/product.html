@@ -1,5 +1,7 @@
 {% extends 'proj/base.html' %}
 
+{% load custom_filters %}
+
 {% block content %}
 <link rel="stylesheet" href="/../static/css/style_product.css">
 
@@ -14,34 +16,18 @@
         <!--Product Container-->
         <div class="product_container">
             <!--Small Image List-->
-            <div class="images_container">
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
-                <span class="small-image"></span>
+            <div id="image-container" class="images_container">
+                {% for image in product|get_images %}
+                    {% if forloop.counter0 == 0 %}
+                    <img class="small-image active" src="{{ image.image.url }}">
+                    {% else %}                    
+                    <img class="small-image" src="{{ image.image.url }}">
+                    {% endif %}
+                {% endfor %}
             </div><!--/Small Image List-->
 
             <!--Image on Display-->
-            <div class="image_display"></div><!--/Image on Display-->
+            <img class="image_display" src="{{ product|get_first_image }}"/><!--/Image on Display-->
 
             <!--Product Info-->
             <div class="product_info">
@@ -49,9 +35,9 @@
                     <div class="product_header">
                         <div class="text_block">
                             <span class="text">{{product.name}}</span>
-                            <span class="text">{{ product.price}}</span>
+                            <span class="text">{{ product|get_price }}</span>
                         </div>
-                        <span class="heart_icon"></span>
+                        <span id="favorite" class="favorite {{ product|get_favorite_class:user_id }}"></span>
                     </div><!--/product_header-->
 
                     <!--product description-->
@@ -76,7 +62,7 @@
                                     <span class="delivery_icon"></span>
                                     <span class="text">Delivery</span>
                                 </div>
-                                <span class="details">If it's more convinient to you we send the producct directly to
+                                <span class="details">If it's more convinient to you we send the product directly to
                                     your home!</span>
                             </div><!--End Delivery Details-->
                         </div>
@@ -94,23 +80,16 @@
         <span class="related_title">Related Products</span>
         <div class="related_row">
             {% for relatedProduct in relatedProducts %}
-                <a style="text-decoration:none" href="{% url 'product' relatedProduct.id %}" class="product_card">
-                    <span id="image"></span>
-                    <div class="info">
-                        <div class="text_container">
-                            <div class="text_block">
-                                <span class="product_name">{{ relatedProduct.name }}</span>
-                                <span class="item_type">{{ relatedProduct.type }}</span>
-                            </div>
-                            <span class="item_price">{{ relatedProduct.price }}</span>
-                        </div>
-                        <span class="favorite"></span>
-                    </div>
-                </a>
+                {% include "./components/product_card.html" with p=relatedProduct %}
             {% endfor %}
         </div>
     </div>
 </div>
 
+<script src="../../static/javascript/favorite.js"></script>
+<script src="/../static/javascript/image_viewer.js"></script>
+<script>
+    addFavoriteListener('favorite', '{% url "addWishList" %}', '{{ product.id }}');
+</script>
 
 {% endblock %}

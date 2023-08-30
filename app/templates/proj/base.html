@@ -13,13 +13,17 @@
     <div class="header">
         <div class="header_actions_blank"></div>
         <!--blank canvas to center title element. Could be used for burger menu in the future-->
-        <span class="title">Serralharia Web Apps</span>
+        <a style="text-decoration:none" href="{% url 'home' %}" class="title">Serralharia Web Apps</a>
+        <!--<span class="title">Serralharia Web Apps</span>-->
+        <!--<a style="text-decoration:none" href="{% url 'home' %}" class="title">Serralharia Web Apps</a>-->
         <div class="header_actions">
             <a style="text-decoration:none" href="{% url 'register' %}" class="registerBtn">Sign Up</a>
             <a style="text-decoration:none" href="{% url 'login' %}" class="loginBtn">Login</a>
             <a style="text-decoration:none" href="{% url 'addProduct' %}" class="addProduct">Add a Product</a>
             <span id="search"></span>
-            <span id="avatar"></span> 
+            <a style="text-decoration:none" href="{% url 'userProfile' %}" id="avatar"></a>
+            <!--<span id="avatar"></span>-->
+            <!--<a style="text-decoration:none" href="{% url 'userProfile' %}" id="avatar"></a>-->
         </div>
     </div><!--End Header-->
     {% block content %}

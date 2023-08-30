@@ -1,0 +1,22 @@
+{% load custom_filters %}
+
+<div class ="product_card">
+    <!-- Render the product image -->
+    <a href="{% url 'product' p.id %}"><img src="{{ p|get_first_image }}" id="image"/></a>
+    <div class="info">
+        <div class="text_container">
+            <div class="text_block">
+                <!-- Render the product name and type -->
+                <a style="text-decoration:none" href="{% url 'product' p.id %}"class="product_name">{{ p.name }}</a>
+                <a style="text-decoration:none" href="{% url 'category' p.category.id %}"class="item_type">{{ p.category.name }}</a>
+            </div>
+            <!-- Render the product price -->
+            <span class="item_price">{{ p|get_price }}</span>
+        </div>
+        <span id="favorite-{{ p.id }}" class="favorite {{ p|get_favorite_class:user_id }}"></span>
+    </div>
+    <script src="../../../static/javascript/favorite.js"></script>
+    <script>
+        addFavoriteListener('favorite-{{ p.id }}', '{% url "addWishList" %}', '{{ p.id }}');
+    </script>
+</div>

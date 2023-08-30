@@ -1,0 +1,203 @@
+{% extends 'proj/base.html' %}
+
+{% load custom_filters %}
+
+{% block content %}
+<link rel="stylesheet" href="/../static/css/user_profile.css" /> 
+<link rel="stylesheet" href="/../static/css/buttons.css" /> 
+<title>User Profile</title>
+<script src="/../static/javascript/tabs_script.js" defer></script>
+<script src="/../static/javascript/favorite.js"></script>
+
+<div class="container_user">
+    <div class="tabs_container">
+        <ul>
+            <li data-tab-target="#profile" class="active tab">Profile</li>
+            <li data-tab-target="#wish_list" class="tab">Wish List</li>
+            <li data-tab-target="#budget" class="tab">Budget</li>
+            <li data-tab-target="#orders" class="tab">Orders</li>
+        </ul>
+    </div>
+
+    <div class="tab-content">
+
+        <!--Profile-->
+        <div id="profile" data-tab-content class="active">
+            <div class="content_group-1">
+                <div class="profile_content">
+                    <!--Profile Details-->
+                    <div class="container_type-1">
+                        <div class="details">
+                            <span class="title">Profile Details</span>
+                            <div class="text_content">
+                                <span class="tooltip">Name</span>
+                                <span class="tooltip_value">{{ user_profile.user.first_name }} {{ user_profile.user.last_name }}</span>
+                            </div>
+                            <div class="text_content">
+                                <span class="tooltip">Email</span>
+                                <span class="tooltip_value">{{ user_profile.user.email }}</span>
+                            </div>
+                            <div class="text_content">
+                                <span class="tooltip">Phone Number</span>
+                                <span class="tooltip_value">{{ user_profile.phone_number }}</span>
+                            </div>
+                            <div class="text_content">
+                                <span class="tooltip">NIF</span>
+                                <span class="tooltip_value">{{ user_profile.vat_number }}</span>
+                            </div>
+                        </div>
+                        <!--<button class="secondary_button type2">Edit Details</button>-->
+                    </div>
+                    <!--End Profile Details-->
+
+                    <!--Address & Billing Address-->
+                    <div class="address_content">
+                        <div class="container_type-1 column">
+                            <span class="title">Address</span>
+                            <div class="text_content">
+                                <span class="tooltip">Address</span>
+                                <span class="tooltip_value">{{ user_profile.address }}</span>
+                            </div>
+                            <!--<button class="secondary_button type2" style="margin-top:24px">Edit Address</button>-->
+                        </div>
+                        <div class="container_type-1 column">
+                            <span class="title">Billing Address</span>
+                            <div class="text_content">
+                                <span class="tooltip">Address</span>
+                                <span class="tooltip_value">{{ user_profile.billing_address }}</span>
+                            </div>
+                            <!--<button class="secondary_button type2" style="margin-top:24px">Edit Address</button>-->
+                        </div>
+                    </div>
+                    <!--End Address & Billing Address-->                        
+                </div>
+
+                <div class="button_container">
+                    <a style="text-decoration:none" href="{% url 'userEdit' %}"><div class="primary_button">Edit</div></a>
+                    <a style="text-decoration:none" href="{% url 'logout' %}"><div class="secondary_button">Logout</div></a>
+                </div>
+            </div>
+        </div> <!--End Profile-->
+
+            <!--Wish List-->
+        <div id="wish_list" data-tab-content>
+            <div class="wish_container">
+                {% for wish in wish_list %}
+                <div class="wish_item">
+                    <a href="{% url 'product' wish.product.id %}"><img src="{{ wish.product|get_first_image }}" class="product_image"/></a>
+                    <div class="product_details">
+                        <span class="product_name"><a style="text-decoration:none;color:#333" href="{% url 'product' wish.product.id %}">{{ wish.product.name }}</a></span>
+                        <span class="product_price">{{ wish.product|get_price }}</span>
+                    </div>
+                    <div class="icon_container">
+                        <span id="favorite-{{ wish.product.id }}" class="favorite {{ wish.product|get_favorite_class:user_id }}"></span>
+                        <!--<div class="icon_2"></div>-->
+                    </div>
+                </div>
+                <script>
+                    addFavoriteListener('favorite-{{ wish.product.id }}', '{% url "addWishList" %}', '{{ wish.product.id }}');
+                </script>
+                {% endfor %}
+            </div>
+        </div><!--End Wish List-->
+
+        <!--Budged-->
+        <div id="budget" data-tab-content>
+            <div class="budget_container">
+                <!--
+                    Copy & Past "budget_card" for each budget on the list. 
+                    Place it inside the "budget_container"
+                -->
+                <!--Budget Card-->
+                <div class="budget_card">
+                    <!--Header-->
+                    <div class="budget_header">
+                        <div class="budget_title">
+                            <span class="budget_large_text">Product Name</span>
+                            <span class="budget_small_text">Reference Number</span>
+                        </div>
+                        <span class="budget_large_text">Status</span>
+                    </div>
+                    <!--End Header-->
+                    <!--Content-->
+                    <div class="budget_content">
+                        <span class="budget_large_text">Descrição</span>
+                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
+                        <span class="budget_small_text">DD/MM/YYYY</span>
+                    </div>
+                    <!--End Content-->
+                </div>
+                    <!--End Budget Card-->
+                    <!--Budget Card-->
+                <div class="budget_card">
+                    <!--Header-->
+                    <div class="budget_header">
+                        <div class="budget_title">
+                            <span class="budget_large_text">Product Name</span>
+                            <span class="budget_small_text">Reference Number</span>
+                        </div>
+                        <span class="budget_large_text">Status</span>
+                    </div>
+                    <!--End Header-->
+                    <!--Content-->
+                    <div class="budget_content">
+                        <span class="budget_large_text">Descrição</span>
+                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
+                        <span class="budget_small_text">DD/MM/YYYY</span>
+                    </div>
+                    <!--End Content-->
+                </div>
+                    <!--End Budget Card-->
+                <!--Budget Card-->
+                <div class="budget_card">
+                    <!--Header-->
+                    <div class="budget_header">
+                        <div class="budget_title">
+                            <span class="budget_large_text">Product Name</span>
+                            <span class="budget_small_text">Reference Number</span>
+                        </div>
+                        <span class="budget_large_text">Status</span>
+                    </div>
+                    <!--End Header-->
+                    <!--Content-->
+                    <div class="budget_content">
+                        <span class="budget_large_text">Descrição</span>
+                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
+                        <span class="budget_small_text">DD/MM/YYYY</span>
+                    </div>
+                    <!--End Content-->
+                </div>
+                    <!--End Budget Card-->
+            </div>
+        </div><!--End Budged-->
+
+            <!--Orders-->
+            <div id="orders" data-tab-content>
+            <div class="budget_container">
+                <!--Budget Card-->
+                <div class="budget_card">
+                    <!--Header-->
+                    <div class="budget_header">
+                        <div class="budget_title">
+                            <span class="budget_large_text">Product Name</span>
+                            <span class="budget_small_text">Reference Number</span>
+                        </div>
+                        <span class="budget_large_text">Status</span>
+                    </div>
+                    <!--End Header-->
+                    <!--Content-->
+                    <div class="budget_content">
+                        <span class="budget_large_text">Descrição</span>
+                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
+                        <span class="budget_small_text">DD/MM/YYYY</span>
+                    </div>
+                    <!--End Content-->
+                    <div class="secondary_button">Show Invoice</div>
+                </div>
+                    <!--End Budget Card-->
+            </div>
+        </div><!--End Orders-->
+
+    </div>
+</div>
+{% endblock %}
