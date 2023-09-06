@@ -1,0 +1,36 @@
+.product-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-header .product-image {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-header .product-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px 0 24px;
+}
+
+.product-header .product-info .product-name {
+    color: #333333;
+    font-family: "Inter-Bold";
+    font-size: 32px;  
+}
+
+.product-header .product-info .product-category {
+    color: #828282;
+    font-family: "Inter-regular";
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 4px 0 4px;
+}
+
+.product-header .product-info .product-description {
+    padding-top: 16px;
+    margin: 0 4px 0 4px;
+}

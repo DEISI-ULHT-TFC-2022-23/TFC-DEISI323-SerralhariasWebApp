@@ -1,0 +1,27 @@
+id;name;description;price;category_id
+1;Chair;Black lacquered iron chair with a wooden seat;0.0;4
+2;Outdoor Sofa;Iron sofa specially treated for outdoor use. Painted in green;0.0;4
+3;Rustic Armchair;Multipurpose rustic-style armchair painted in brown;0.0;4
+4;Island Bench;Custom-made individual benches for your island, with a rotating system and height adjustment.;0.0;4
+5;5-Seater Bench;Simple bench for indoor or outdoor use with 5 seats, outdoor treatment, and painted in the color of your choice;0.0;4
+6;Sideboard;Simple sideboard with two iron doors and a wooden top measuring 1200x600x200mm;0.0;1
+7;Wall Shelf;Large wall shelf with various levels at different heights and space for a television in the center. All dimensions tailored to your needs.;;1
+8;Hanging Shelves;Hanging shelves with an iron base and wooden shelves. Custom-made and painted to your liking;;1
+9;5-Level Sideboard;Sideboard as shown in the photo, 5 levels all made of iron and sheet metal.;0.0;1
+10;Dining Table;Dining table with an iron base, wooden or iron top, and painted in the color of your choice.;;3
+11;TV Stand;Small iron TV stand with a wooden top for your television. 1000x40x40;0.0;3
+12;Nightstand;100% iron nightstand measuring 600x300x250mm;0.0;3
+13;Garden Table;Outdoor table with the necessary treatments, painted in dark green, measuring 2000x1100x800mm;0.0;3
+14;Suite Bed;Double bed for a suite with dimensions of 2100x2000x60mm;0.0;2
+15;Double Bed;Standard double bed measuring 1800x1600.60mm;0.0;2
+16;Bunk Bed;Bunk bed with a ladder measuring 1100x1800x1900mm;0.0;2
+17;Single Bed;Iron single bed measuring 1100x1800x600mm;0.0;2
+18;Crib;Crib with safety guards measuring 900x1000x1200mm;0.0;2
+19;Railings;Exterior railings with treatment, design, dimensions, and color of your choice. The photos are reference examples already made.;;5
+20;Exterior Gates;Exterior gate with a motor, treatment, design, dimensions, and color of your choice. The photos are reference examples already made.;;5
+21;Man Door;Exterior man door with treatment, design, dimensions, and color of your choice. The photos are reference examples already made.;;5
+22;Staircases;Interior staircase made of iron beam and sheet metal with design, dimensions, and color of your choice. The photos are reference examples already made.;;5
+23;Staircase Guards/Railings;Guards/railings for interior staircases or balconies with design, dimensions, and color of your choice. The photos are reference examples already made.;;5
+24;Coffee Table;Small iron coffee table for the center of the living room;0.0;3
+25;Outdoor Cabinet;Outdoor cabinet with treatment;0.0;1
+26;Gas Cylinder Door;Protection door for gas cylinder;0.0;5

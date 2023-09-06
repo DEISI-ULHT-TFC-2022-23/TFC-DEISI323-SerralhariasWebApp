@@ -10,11 +10,10 @@
     <!--Welcome Text-->
     <div class="welcome_text">
         <span class="title">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Welcome to Serralharias WebApp
         </span>
         <span class="sub-title">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
+            Custom Iron Products Tailored to Your Preferences and Measurements
         </span>
     </div>
     <div class="content_home">
@@ -28,8 +27,8 @@
         <!--Highlights-->
         <div class="hightlight">
             <span class="hightlight_text">Highlights</span>
-            <div class="highlights_container">
-
+            <div id="products" class="highlights_container">
+                
                 <!-- Loop over the list of products -->
                 {% for product in products %} 
                     {% include "./components/product_card.html" with p=product %}

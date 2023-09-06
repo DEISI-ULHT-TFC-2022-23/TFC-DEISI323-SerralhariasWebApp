@@ -1,4 +1,5 @@
 from django import template
+from django.core import serializers
 
 register = template.Library()
 
@@ -18,7 +19,7 @@ def get_images(product):
 
 @register.filter
 def get_price(product):
-    return "A orçamentar" if product.price is None else f"{product.price:.2f} €"
+    return "TBD" if product.price is None else f"{product.price:.2f} €"
 
 @register.filter
 def get_favorite_class(product, user_id):
@@ -34,3 +35,7 @@ def get_image(category):
         return category.image.url
     
     return "/static/assets/imgs/highlight_default.png"
+
+@register.filter
+def get_reference_number(order):
+    return f"#{order.id:08d}"

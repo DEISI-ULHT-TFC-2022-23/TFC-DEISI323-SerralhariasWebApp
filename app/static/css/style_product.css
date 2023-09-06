@@ -121,6 +121,13 @@
 .product_container .product_info .product_details .product_header .filled {
   background-image: url(../assets/icons/heart_full.svg);
 }
+.product_container .product_info .product_details .product_header .unlisted {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/unlisted.svg);
+}
 
 @font-face {
   font-family: "Inter-Regular";
@@ -265,6 +272,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -427,6 +435,7 @@ body {
   line-height: 24px;
 }
 .container .content_product .product_container .product_info .bottom_details {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

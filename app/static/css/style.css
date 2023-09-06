@@ -76,16 +76,16 @@
 }
 
 .header .title {
-  width: 33.3%;
+  width: 50%;
   color: #333333;
   font-family: "Inter-Medium";
   font-size: 24px;
   line-height: 32px;
-  text-align: center;
+  text-align: start;
   
 }
 .header .header_actions {
-  width: 33.3%;
+  width: 50%;
   display: flex;
   gap: 16px;
   text-align: right;
@@ -116,7 +116,12 @@
   color: #333333;
   text-align: left;
 }
-.header .header_actions #search {
+.header .header_actions .form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.header .header_actions .form #search {
   width: 32px;
   height: 32px;
   background-image: url(../assets/icons/search.svg);
@@ -257,6 +262,14 @@
 
 .product_card .info .filled {
   background-image: url(../assets/icons/heart_full.svg);
+}
+
+.product_card .info .unlisted {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/unlisted.svg);
 }
 
 .container {

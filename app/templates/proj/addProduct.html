@@ -1,11 +1,14 @@
 {% extends 'proj/base.html' %}
 
 {% block content %}
-<div class="addProduct">
-    <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name="addProduct" class="btn btn-primary">
+<link rel="stylesheet" href="/../static/css/forms.css">
+
+<div class="form-container">
+    <form class="form" method="POST" enctype="multipart/form-data">
+      <div class="title">Add Product</div>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" name="addProduct" class="btn btn-primary">
   </form>
 </div>
 {% endblock %}

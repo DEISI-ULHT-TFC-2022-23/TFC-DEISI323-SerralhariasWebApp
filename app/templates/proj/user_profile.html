@@ -13,9 +13,14 @@
     <div class="tabs_container">
         <ul>
             <li data-tab-target="#profile" class="active tab">Profile</li>
+            {% if not user.is_staff %}
             <li data-tab-target="#wish_list" class="tab">Wish List</li>
             <li data-tab-target="#budget" class="tab">Budget</li>
             <li data-tab-target="#orders" class="tab">Orders</li>
+            {% else %}
+            <li data-tab-target="#users" class="tab">Users</li>
+            <li data-tab-target="#budget" class="tab">Budget</li>
+            {% endif %}
         </ul>
     </div>
 
@@ -104,75 +109,29 @@
         <!--Budged-->
         <div id="budget" data-tab-content>
             <div class="budget_container">
-                <!--
-                    Copy & Past "budget_card" for each budget on the list. 
-                    Place it inside the "budget_container"
-                -->
-                <!--Budget Card-->
+                {% for order in custom_orders %}
                 <div class="budget_card">
-                    <!--Header-->
                     <div class="budget_header">
-                        <div class="budget_title">
-                            <span class="budget_large_text">Product Name</span>
-                            <span class="budget_small_text">Reference Number</span>
+                        <span class="budget_large_text">{{ order.product.name }}</span>
+                        <div class="budget_reference">
+                            <span class="budget_small_text">{{ order|get_reference_number }}</span>
+                            <span class="budget_medium_text">{{ order.state }}</span>
                         </div>
-                        <span class="budget_large_text">Status</span>
                     </div>
-                    <!--End Header-->
-                    <!--Content-->
                     <div class="budget_content">
-                        <span class="budget_large_text">Descrição</span>
-                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
-                        <span class="budget_small_text">DD/MM/YYYY</span>
+                        <span class="budget_medium_text">Description</span>
+                        <span class="budget_regular_text">{{ order.description }}</span>
                     </div>
-                    <!--End Content-->
+                    <div class="budget_footer">
+                        <span class="budget_small_text">{{ order.created_date }}</span>
+                    </div>                    
                 </div>
-                    <!--End Budget Card-->
-                    <!--Budget Card-->
-                <div class="budget_card">
-                    <!--Header-->
-                    <div class="budget_header">
-                        <div class="budget_title">
-                            <span class="budget_large_text">Product Name</span>
-                            <span class="budget_small_text">Reference Number</span>
-                        </div>
-                        <span class="budget_large_text">Status</span>
-                    </div>
-                    <!--End Header-->
-                    <!--Content-->
-                    <div class="budget_content">
-                        <span class="budget_large_text">Descrição</span>
-                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
-                        <span class="budget_small_text">DD/MM/YYYY</span>
-                    </div>
-                    <!--End Content-->
-                </div>
-                    <!--End Budget Card-->
-                <!--Budget Card-->
-                <div class="budget_card">
-                    <!--Header-->
-                    <div class="budget_header">
-                        <div class="budget_title">
-                            <span class="budget_large_text">Product Name</span>
-                            <span class="budget_small_text">Reference Number</span>
-                        </div>
-                        <span class="budget_large_text">Status</span>
-                    </div>
-                    <!--End Header-->
-                    <!--Content-->
-                    <div class="budget_content">
-                        <span class="budget_large_text">Descrição</span>
-                        <span class="budget_medium_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas purus viverra accumsan in. Massa sapien faucibus et molestie ac feugiat sed lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Facilisi cras fermentum odio eu feugiat pretium nibh. Massa tincidunt dui ut ornare lectus.</span>
-                        <span class="budget_small_text">DD/MM/YYYY</span>
-                    </div>
-                    <!--End Content-->
-                </div>
-                    <!--End Budget Card-->
+                {% endfor %}
             </div>
         </div><!--End Budged-->
 
             <!--Orders-->
-            <div id="orders" data-tab-content>
+        <div id="orders" data-tab-content>
             <div class="budget_container">
                 <!--Budget Card-->
                 <div class="budget_card">
@@ -197,6 +156,44 @@
                     <!--End Budget Card-->
             </div>
         </div><!--End Orders-->
+
+        <div id="users" data-tab-content>
+            {% if user.is_staff %}
+            <div class="user_container">
+                {% for u in users %}
+                <div class="user_item">
+                    <span class="user_icon"></span>
+                    <div class="user_details">
+                        <span class="user_name">{{ u.get_full_name }}</i></span>
+                        <span class="user_info">{{ u.username }} <i>({{ u.email }})</i></span>
+                        <div class="user_dates">
+                            <div class="user_date_joined">
+                                <span class="icon"></span>
+                                <span>{{ u.date_joined }}</span>
+                            </div>
+                            <span class="divider"></span>
+                            <div class="user_last_login">
+                                <span class="icon"></span>
+                                <span>{{ u.last_login }}</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    {% if u != user %}
+                    <div class="icon_container">
+                        {% if u.is_active %}
+                        <a style="text-decoration:none" href="{% url 'changeBlockStatus' u.id %}" class="block"></a>
+                        {% else %}
+                        <a style="text-decoration:none" href="{% url 'changeBlockStatus' u.id %}" class="unblock"></a>
+                        {% endif %}
+                        <a style="text-decoration:none" href="{% url 'userDelete' u.id %}" class="delete"></a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
 
     </div>
 </div>

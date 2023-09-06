@@ -170,11 +170,105 @@
   background-image: url(../assets/icons/bell.svg);
 }
 
+.user_item {
+  min-height: 88px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 16px;
+  align-items: center;
+}
+.user_item .user_icon {
+  display: block;
+  width: 88px;
+  height: 88px;
+  background-image: url(../assets/icons/avatar.svg);
+  background-size: 88px;
+}
+.user_item .user_details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #333333;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Inter-Medium";
+}
+.user_item .user_name {
+  height: 24px;
+}
+.user_item .user_details .user_dates {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  font-size: 14px;
+}
+.user_item .user_details .user_dates .divider {
+  width: 2px;
+  background-color: #E0E0E0;
+}
+.user_item .user_details .user_dates .user_date_joined {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.user_item .user_details .user_dates .user_date_joined .icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/date_joined.svg);
+  background-size: 24px;
+}
+.user_item .user_details .user_dates .user_last_login {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.user_item .user_details .user_dates .user_last_login .icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/last_login.svg);
+  background-size: 24px;
+}
+.user_item .icon_container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.user_item .icon_container .block {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/block.svg);
+  background-size: 24px;
+}
+.user_item .icon_container .unblock {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/unblock.svg);
+  background-size: 24px;
+}
+.user_item .icon_container .delete {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/delete.svg);
+  background-size: 24px;
+}
+
 .budget_card {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
@@ -183,11 +277,18 @@
 }
 .budget_card .budget_large_text {
   color: #333333;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 28px;
   font-family: "Inter-Bold";
 }
 .budget_card .budget_medium_text {
+  color: #4F4F4F;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+  font-family: "Inter-Regular";
+}
+.budget_card .budget_regular_text {
   color: #4F4F4F;
   font-size: 16px;
   line-height: 28px;
@@ -203,13 +304,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   align-self: stretch;
 }
-.budget_card .budget_header .budget_title {
+.budget_card .budget_header .budget_reference {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  justify-content: space-between;
+  align-items: end;
 }
 .budget_card .budget_content {
   display: flex;
@@ -340,6 +442,15 @@ body {
 }
 
 .wish_container {
+  width: 868px;
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.user_container {
   width: 868px;
   display: flex;
   gap: 16px;

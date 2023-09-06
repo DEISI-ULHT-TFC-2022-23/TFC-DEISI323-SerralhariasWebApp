@@ -8,7 +8,7 @@
 <div class="container">
     <div class="content_product">
         <!--Back Component-->
-        <div class="back">
+        <div class="back" onclick="history.back()">
             <span class="back_icon"></span>
             <span class="back_text">Back</span>
         </div><!--/Back Component-->
@@ -37,7 +37,11 @@
                             <span class="text">{{product.name}}</span>
                             <span class="text">{{ product|get_price }}</span>
                         </div>
+                        {% if not user.is_staff and not user.is_anonymous %}
                         <span id="favorite" class="favorite {{ product|get_favorite_class:user_id }}"></span>
+                        {% elif user.is_staff and product.unlisted %}
+                        <span class="unlisted"></span>
+                        {% endif %}
                     </div><!--/product_header-->
 
                     <!--product description-->
@@ -45,13 +49,14 @@
                 </div><!--product details-->
                 <div class="bottom_details">
                     <!--shipment details-->
+                    {% if not user.is_staff %}
                     <div class="shipment_details">
                         <span class="title">How to get it</span>
                         <div class="shipment_content">
                             <div class="details">
                                 <div class="shipment_header">
                                     <span class="shipment_icon"></span>
-                                    <span class="text">Pick it up from out workshop</span>
+                                    <span class="text">Pick it up from our workshop</span>
                                 </div>
                                 <span class="details">If you prefer, you are always welcome to visit us and collect you
                                     order!</span>
@@ -62,16 +67,26 @@
                                     <span class="delivery_icon"></span>
                                     <span class="text">Delivery</span>
                                 </div>
-                                <span class="details">If it's more convinient to you we send the product directly to
+                                <span class="details">If it's more convenient to you we send the product directly to
                                     your home!</span>
                             </div><!--End Delivery Details-->
                         </div>
-                    </div><!--shipment details-->
+                    </div>
+                    {% endif %}
+                    <!--shipment details-->
                     <!--button details-->
+                    {% if not user.is_staff and not user.is_anonymous %}
                     <div class="button_container">
                         <div class="primary_button">Place Order</div>
-                        <div class="secondary_button">Custom Order</div>
+                        <a class="secondary_button" style="text-decoration:none" href="{% url 'addCustomOrder' product.id %}">Custom Order</a>
                     </div>
+                    {% elif user.is_staff %}
+                    <div class="button_container">
+                        <a style="text-decoration:none" href="{% url 'editProduct' product.id %}"  class="primary_button">Edit</a>
+                        <a style="text-decoration:none" href="{% url 'changeListStatus' product.id %}" class="secondary_button">{% if product.unlisted %}List{% else %}Unlist{% endif %}</a>
+                        <a style="text-decoration:none" href="{% url 'removeProduct' product.id %}" class="secondary_button">Remove</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div><!--/product Info-->
         </div><!--/Product Container-->
