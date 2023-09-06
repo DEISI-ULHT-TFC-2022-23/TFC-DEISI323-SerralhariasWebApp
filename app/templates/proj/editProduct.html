@@ -1,0 +1,14 @@
+{% extends 'proj/base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/../static/css/forms.css">
+
+<div class="form-container">
+    <form class="form" method="POST" enctype="multipart/form-data">
+      <div class="title">Edit Product</div>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" name="editProduct" class="btn btn-primary">
+  </form>
+</div>
+{% endblock %}

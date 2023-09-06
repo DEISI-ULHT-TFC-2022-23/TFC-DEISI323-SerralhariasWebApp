@@ -1,0 +1,104 @@
+.form-container {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .form {
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 48px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    line-height: 32px;
+    font-family: "Inter-Medium";
+    color: #333333;
+    text-align: left;
+}
+
+.form-container .form .title {
+    text-align: center;
+    color: #333333;
+    font-family: "Inter-Bold";
+    font-size: 32px;
+    line-height: 36px;    
+}
+
+.form-container .form p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container .form p .helptext {
+    color: #555555;
+    font-style: italic;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.form-container .form p input,select {
+    height: 28px;
+    font-family: "Inter-Medium";
+    font-size: 14px;
+}
+
+.form-container .form p textarea {
+    font-family: "Inter-Medium";
+    font-size: 14px;
+}
+
+.form-container .form input[type=submit] {
+    width: 274px;
+    background-color: #333333;
+    border-radius: 8px;
+    padding: 12px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #FFFFFF;
+    font-family: "Inter-Medium";
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 32px;
+}
+
+.form-container .form ul {
+    width: 100%;
+    color: #555555;
+    font-style: italic;
+    line-height: 16px;
+    font-size: 14px;
+    border: solid 1px #bbbbbb;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container .form ul li {
+    padding: 6px 16px 6px 16px;
+}
+
+.form-container .form ul.errorlist {
+    color: #4f2525;
+    border: solid 1px rgb(166, 122, 122);
+    border-radius: 4px;
+    background-color: #f6c2c2;
+}

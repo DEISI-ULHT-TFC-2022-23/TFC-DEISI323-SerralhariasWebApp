@@ -111,12 +111,22 @@
   font-size: 20px;
   line-height: 28px;
 }
-.product_card .info .favorite {
+.product_container .product_info .product_details .product_header .favorite {
   width: 32px;
   height: 32px;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../assets/icons/Heart_Empty.svg);
+}
+.product_container .product_info .product_details .product_header .filled {
+  background-image: url(../assets/icons/heart_full.svg);
+}
+.product_container .product_info .product_details .product_header .unlisted {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../assets/icons/unlisted.svg);
 }
 
 @font-face {
@@ -262,6 +272,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -302,6 +313,7 @@ body {
   min-width: 124px;
   height: 100%;
   overflow-x: scroll;
+  padding: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,18 +333,22 @@ body {
   min-width: 124px;
   min-height: 124px;
   border-radius: 8px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../assets/imgs/small_image_default_2.svg);
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  filter: grayscale(80%) brightness(90%);
+}
+.container .content_product .product_container .images_container .active {
+  filter: none;
 }
 .container .content_product .product_container .image_display {
   width: 41%;
   min-width: 719px;
   height: 100%;
   min-height: 525px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../assets/imgs/small_image_default_2.svg);
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
 }
 .container .content_product .product_container .product_info {
   width: 50%;
@@ -419,6 +435,7 @@ body {
   line-height: 24px;
 }
 .container .content_product .product_container .product_info .bottom_details {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

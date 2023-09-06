@@ -1,5 +1,7 @@
 {% extends 'proj/base.html' %}
 
+{% load custom_filters %}
+
 {% block content %}
 
 <!--Content-->
@@ -8,11 +10,10 @@
     <!--Welcome Text-->
     <div class="welcome_text">
         <span class="title">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Welcome to Serralharias WebApp
         </span>
         <span class="sub-title">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
+            Custom Iron Products Tailored to Your Preferences and Measurements
         </span>
     </div>
     <div class="content_home">
@@ -20,34 +21,17 @@
         <!--Category-->
         <div class="categories">
             {% for category in categories %}
-            <a style="text-decoration:none" href="{% url 'category' category %}"class="category">{{ category }}</a>
-            <div class="category-image" style="background-image: url('../assets/imgs/category_default.png')"></div>
+                <a style="text-decoration:none; background-image: url('{{ category|get_image }}')" href="{% url 'category' category.id %}" class="category">{{ category.name }}</a>
             {% endfor %}
         </div>
         <!--Highlights-->
         <div class="hightlight">
             <span class="hightlight_text">Highlights</span>
-            <div class="highlights_container">
-
+            <div id="products" class="highlights_container">
+                
                 <!-- Loop over the list of products -->
-                {% for product in products %}
-                <!--Product Card Mock-->
-                <a style="text-decoration:none" href="{% url 'product' product.id %}"class ="product_card">
-                    <!-- Render the product image -->
-                    <span id="image"><img src="{{ product.image.url }}"></span>
-                    <div class="info">
-                        <div class="text_container">
-                            <div class="text_block">
-                                <!-- Render the product name and type -->
-                                <span class="product_name">{{ product.name }}</span>
-                                <span class="item_type">{{ product.type }}</span>
-                            </div>
-                            <!-- Render the product price -->
-                            <span class="item_price">{{ product.price }}</span>
-                        </div>
-                        <span class="favorite"></span>
-                    </div>
-                </a><!--End Product Card-->
+                {% for product in products %} 
+                    {% include "./components/product_card.html" with p=product %}
                 {% endfor %}
 
             </div>

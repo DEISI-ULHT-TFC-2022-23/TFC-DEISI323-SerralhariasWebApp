@@ -1,0 +1,24 @@
+{% extends 'proj/base.html' %}
+
+{% load custom_filters %}
+
+{% block content %}
+<link rel="stylesheet" href="/../static/css/forms.css">
+<link rel="stylesheet" href="/../static/css/custom_order.css">
+
+<div class="form-container">
+    <form class="form" method="POST">
+        <div class="product-header">
+            <img class="product-image" src="{{ product|get_first_image }}"/>
+            <div class="product-info">
+                <div class="product-name">{{ product.name }}</div>
+                <a style="text-decoration:none" href="{% url 'category' product.category.id %}" class="product-category">{{ product.category.name }}</a>
+                <span class="product-description">{{ product.description}}</span>
+            </div>
+        </div>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" name="custom_order" class="btn btn-primary">
+  </form>
+</div>
+{% endblock %}
